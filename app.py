@@ -11,7 +11,6 @@ from flask_migrate import Migrate
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from datetime import datetime
 from barcode import EAN14
-from barcode.writer import ImageWriter
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from webforms import LoginForm, PostForm, UserForm, PasswordForm, NamerForm, SearchForm
