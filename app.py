@@ -10,7 +10,6 @@ from flask_bootstrap import Bootstrap
 from flask_migrate import Migrate
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from datetime import datetime
-from barcode import EAN14
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from webforms import LoginForm, PostForm, UserForm, PasswordForm, NamerForm, SearchForm
@@ -150,7 +149,7 @@ def regtable():
     service = request.form.get("service")
     price = request.form.get("price")
     # Code for Barcode:
-    mybar = EAN14(str(sana.strftime("%Y%m%d%H%M%S")))
+    mybar = str(sana.strftime("%Y%m%d%H%M%S"))
     # Hali bu yerga qo'shiladiganlari bor >>>
     return render_template('regtable.html',
                            mybar=mybar,
