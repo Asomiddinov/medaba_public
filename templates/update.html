@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}{% for message in get_flashed_messages() %}
+<div class="alert alert-dark alert-dismissible fade show" role="alert">{{ message }}<button type="button"
+        class="btn-close" data-bs-dismiss="alert" aria-label="close">
+    </button>
+</div>
+{% endfor %}
+{% if id == current_user.id %}
+<h1>User ma'lumotlarini yangilash:</h1><br>
+<form action="/update/{{ name_to_update.id }}" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.name.label(class="form-label") }}
+    {{ form.name(class="form-control", value=name_to_update.name) }} <br>
+    {{ form.username.label(class="form-label") }}
+    {{ form.username(class="form-control", value=name_to_update.username) }} <br>
+    {{ form.email.label(class="form-label") }} <br>
+    {{ form.email(class="form-control", value=name_to_update.email) }} <br>
+    {{ form.about_author.label(class="form-label") }} <br>
+    <textarea name="about_author" class="form-control">{{ name_to_update.about_author }}</textarea><br>
+    {{ form.profile_pic.label(class="form-label") }} <br>
+    {{ form.profile_pic(class="form-control", value=name_to_update.profile_pic) }} <br>
+    {{ form.submit(class="btn btn-outline-success") }}
+</form><br>
+{% else %}
+<br>
+<p>
+<h1>
+    Profile'ni tekshiring ⤴ Check your profile ⤴ Проверте ваш профиль ⤴
+</h1>
+</p>
+<style>
+    p {
+        text-align: center;
+    }
+</style>
+<link rel="stylesheet" href='static/reg.css' />
+<br><br>
+{% endif %}
+{% endblock %}

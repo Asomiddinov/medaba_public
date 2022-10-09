@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href='static/reg.css' />
+{% block content %}{% block title %}
+{% for message in get_flashed_messages() %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">{{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+</div>
+{% endfor %}
+<h1>Posts:</h1><br>
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>
+
+<div class="shadow p-3 mb-5 bg-body rounded">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <h1>{{ form.title.label(class="form-label") }}</h1>
+        {{ form.title(class="form-control") }} <br>
+        <h1>{{ form.slug.label(class="form-label") }}</h1>
+        {{ form.slug(class="form-control") }}<br>
+        <h1>{{ form.content.label(class="form-label")|safe }}</h1>
+        {{ form.content(class="form-control", rows="5")|safe }}<br>
+        <div class="d-grid gap-2">
+            {{ form.submit(class="btn btn-outline-success", type="submit") }}
+        </div><br><br />
+    </form><br><br><br>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name="content") }}
+</div>
+
+{% endblock %}{% endblock %}

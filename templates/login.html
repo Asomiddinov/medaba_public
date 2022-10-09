@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %} {% for message in get_flashed_messages() %}
+<link rel="stylesheet" href='static/reg.css' />
+<style>
+    h5 {
+        position: initial;
+        color: lightseagreen;
+        font-size: 0.5em;
+        margin: 0%;
+        padding: 0%;
+        text-align: center;
+        font-family: monospace;
+    }
+
+    .form-label {
+        text-align: center;
+        font-family: monospace;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 1.5em;
+        margin: 0%;
+        padding: 0%;
+        font-family: monospace;
+    }
+</style>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">{{ message }}<button type="button"
+        class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+</div>
+<br>
+{% endfor %}
+<h1>
+    Salom. Ma'lumotlaringizni kiriting!!!
+</h1>
+<div class="shadow p-3 mb-5 bg-body rounded">
+    <form action="" method="post">
+        {{ form.hidden_tag() }} <br>
+        {{ form.username.label(class="form-label") }}
+        {{ form.username(class="form-control") }} <br>
+        {{ form.password.label(class="form-label") }}
+        {{ form.password(class="form-control") }} <br>
+
+        <br>
+        {{ form.submit(class="btn btn-outline-success") }}
+    </form><br><br><br>
+</div>
+
+{% endblock %}

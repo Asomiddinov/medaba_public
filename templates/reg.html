@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <p><b>Ro'yxatga olish:</b></p>
+</div>
+<form action="/regtable" , method="POST">
+    <div class="row">
+        <div class="col">
+            <label for="inputName" class="form-label"><b>FIO:</b></label>
+            <input type="text" class="form-control" placeholder="Full name" name="full_name" required>
+        </div>
+        <div class="col">
+            <label for="inputNumber" class="form-label"><b>price:</b></label>
+            <input type="text" class="form-control" placeholder="Narxi" name="price" required>
+        </div>
+        <div class="col">
+            <label for="inputAddress" class="form-label"><b>Address</b>:</label>
+            <input type="text" class="form-control" placeholder="1-ko'cha, Samarqand" name="adress">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <!-- <input type="text" class="form-control" placeholder="City" aria-label="City"> -->
+            <input class="form-control" type="date" id="birthday" name="birthday">
+        </div>
+        <div class="col-sm">
+            <input class="form-control" placeholder="Tel." type="tel" id="phone" name="phone" required>
+            <small><b>Format: 123-456-7890</b></small>
+        </div>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Erkak" required>
+        <label class="form-check-label" for="inlineRadio1"><b>👨🏻</b></label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Ayol">
+        <label class="form-check-label" for="inlineRadio2"><b>👩🏻</b></label>
+    </div>
+    <br>
+    <br>
+    <center>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            aria-required="true">Xizmat turini tanlang</button>
+    </center>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Xizmat turlari:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">11111111111111</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">2222222222222</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">33333333333333</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                        <label class="form-check-label" for="inlineCheckbox4">4444444444444</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                        <label class="form-check-label" for="inlineCheckbox5">555555555555</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+                    <button name="" value="serv_submit" type="button" class="btn btn-primary">Tasdiqlash</button>
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <center>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"
+            aria-required="true">👨🏻‍⚕️👩🏻‍⚕️ni tanlang</button>
+    </center><br>
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Xizmat turlari:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option01">
+                        <label class="form-check-label" for="inlineCheckbox1">Vrach1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option02">
+                        <label class="form-check-label" for="inlineCheckbox2">Vrach2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option03">
+                        <label class="form-check-label" for="inlineCheckbox3">Vrach3</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option04">
+                        <label class="form-check-label" for="inlineCheckbox4">Vrach4</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option05">
+                        <label class="form-check-label" for="inlineCheckbox5">Vrach5</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+                    <button name="" value="serv_submit" type="button" class="btn btn-primary">Tasdiqlash</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="d-grid gap-2">
+                <input type="submit" class="btn btn-outline-success" value="OK" />
+            </div><br><br />
+</form>
+{% endblock %}
+<!-- <label for="exampleDataList" class="form-label"><b>Price:</b></label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList" name="price"
+                    placeholder="Type to search..." required>
+                <datalist id="datalistOptions">
+                    <option value="Общий анализ крови"></option>
+                </datalist> -->
+
+<!-- <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+</div>
+<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+    <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+</div>
+</div>
+<br><br />
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+    <label class="form-check-label" for="inlineCheckbox2">2</label>
+</div><br /> -->
