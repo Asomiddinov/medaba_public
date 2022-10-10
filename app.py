@@ -1,5 +1,6 @@
 from enum import unique
 import logging
+from msilib import init_database
 import pandas as pd
 from flask_moment import Moment
 import os
@@ -78,6 +79,13 @@ class Posts(db.Model):  # Creating Blog Post:
     slug = db.Column(db.String(255))
     # Foreign Key to link Users(refer too primary key of the user)
     poster_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+
+def create_app():
+    app = Flask(__name__)
+    with app.app_context():
+        init_database()
+    return app
 
 
 @login_manager.user_loader
