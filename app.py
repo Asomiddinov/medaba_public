@@ -31,7 +31,10 @@ app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://sxojerlmbjeaon:08f31c564ec
 UPLOAD_FOLDER = "static/images"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 # Initialize the DB:
-db = SQLAlchemy(app)
+#
+with app.app_context():
+    db = SQLAlchemy(app)
+#
 migrate = Migrate(app, db)
 boot = Bootstrap(app)
 login_manager = LoginManager()
