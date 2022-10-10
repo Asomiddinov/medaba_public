@@ -27,7 +27,7 @@ app.config['SECRET_KEY'] = SECRET_KEY
 # Adding db:
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
 # New db:
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://sxojerlmbjeaon:08f31c564ecffc408a895cac1ebb4e63dfb7e7d650e912531cdec293985242dd@ec2-3-219-19-205.compute-1.amazonaws.com:5432/d241dubbcsh3b5'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://sxojerlmbjeaon:08f31c564ecffc408a895cac1ebb4e63dfb7e7d650e912531cdec293985242dd@ec2-3-219-19-205.compute-1.amazonaws.com:5432/d241dubbcsh3b5'
 UPLOAD_FOLDER = "static/images"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 # Initialize the DB:
